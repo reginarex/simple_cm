@@ -20,7 +20,8 @@
 
     roslaunch simple_cm spawn_robot.launch
     ```
-
+------
+Other steps:
 3. Sending basic movement commands using rostopics?
     - run code in src/[main.py](http://main.py) or use rostopics in terminal to send message
 
