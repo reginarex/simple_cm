@@ -1,4 +1,5 @@
 # simple_cm
+0. [ROS Installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
 
 1. Run the following commands
 
