@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+    <arg name="model" default="$(find simple_cm)/urdf/robot.urdf"/>
+    <arg name="world" default="empty"/> 
+    <arg name="paused" default="false"/>
+    <arg name="use_sim_time" default="true"/>
+    <arg name="gui" default="true"/>
+    <arg name="headless" default="false"/>
+    <arg name="debug" default="false"/>
+    <arg name="verbose" value="true"/>
+
+    <param name="robot_description" textfile="$(find simple_cm)/urdf/robot.urdf" />
+
+	
+    <node name="urdf_spawner" 
+          pkg="gazebo_ros" 
+          type="spawn_model" 
+          respawn="false" 
+          output="screen" 
+          args="-urdf -model cm_model -param robot_description"/>
+
+    <rosparam file="$(find simple_cm)/config/config.yaml" command="load"/>
+
+    <node name="controller_spawner" 
+          pkg ="controller_manager" 
+          type="spawner" 
+          ns="/cm_model" 
+          args="joint1_position_controller joint_state_controller"/>
+    
+    <node name="robot_state_publisher" 
+          pkg="robot_state_publisher" 
+          type="robot_state_publisher" 
+          respawn="false" 
+          output="screen">
+        <remap from="joint_states" to="/cm_model/joint_states" />
+    </node>
+</launch>

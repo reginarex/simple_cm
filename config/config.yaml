@@ -1,0 +1,9 @@
+cm_model:
+    joint_state_controller:
+        type: joint_state_controller/JointStateController
+        publish_rate: 10
+
+    joint1_position_controller:
+        type: velocity_controllers/JointPositionController
+        joint: joint1
+        pid: {p: 1.0, i: 1.0, d: 0.0}
