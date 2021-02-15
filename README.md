@@ -1,5 +1,10 @@
 # simple_cm
-0. [ROS Installation](http://wiki.ros.org/noetic/Installation/Ubuntu)
+0. Pre-requisites
+    0. OS: Ubuntu 20.04
+    1. Install the following:
+        - ROS Noetic (Desktop Full)
+            - [How To: Ubuntu install of ROS Noetic](http://wiki.ros.org/noetic/Installation/Ubuntu)
+    2. [How To: Create a Catkin Workspace](http://wiki.ros.org/catkin/Tutorials/create_a_workspace)
 
 1. Run the following commands
 
